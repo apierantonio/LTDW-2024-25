@@ -1,0 +1,19 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container {
+    border: 3px solid red;
+    width: 60%;
+    height: 90%;
+}
+
+div.container div.row {
+    border: 2px solid blue;
+    width: calc(100% - 14px);
+    height: calc(25% - 14px);
+    margin: 5px;
+}

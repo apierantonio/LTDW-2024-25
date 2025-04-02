@@ -43,3 +43,13 @@ div.container div.row > div.even {
     width: 100%;
     margin: 5px;
 }
+
+div.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid blue;
+    width: calc(100% - 14px);
+    margin: 5px;
+    height: 100%;
+}

@@ -6,14 +6,40 @@ body {
 }
 
 div.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     border: 3px solid red;
     width: 60%;
     height: 90%;
+
 }
 
 div.container div.row {
+    display: flex;
+    height:100%;
     border: 2px solid blue;
     width: calc(100% - 14px);
-    height: calc(25% - 14px);
+    margin: 5px;
+}
+
+div.container div.row > div.onethird {
+    height: calc(100% - 14px);
+    border: 2px solid green;
+    width: calc(33.33% - 28px);
+    margin: 5px;
+}
+
+div.container div.row > div.twothirds {
+    height: calc(100% - 14px);
+    border: 2px solid green;
+    width: calc(66.66% - 0px);
+    margin: 5px;
+}
+
+div.container div.row > div.even {
+    height: calc(100% - 14px);
+    border: 2px solid green;
+    width: 100%;
     margin: 5px;
 }

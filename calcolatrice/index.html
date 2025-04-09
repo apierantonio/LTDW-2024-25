@@ -1,73 +1,52 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="calculator.css">
+        <script>
+            function addDigit(e) {
 
+                alert(e.target.innerText);
+            
+            }
+        </script>
+    </head>
+    <body>
 
-<head>
-    <title>Draggable Textarea Example</title>
-    <style>
-        .draggable {
-            width: 300px;
-            height: 100px;
-            border: 1px solid #000;
-            padding: 10px;
-            resize: both;
-            overflow: auto;
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const textarea = document.querySelector('.draggable');
-            textarea.addEventListener('mousedown', function (e) {
-                let shiftX = e.clientX - textarea.getBoundingClientRect().left;
-                let shiftY = e.clientY - textarea.getBoundingClientRect().top;
+        <div class="calculator" draggable="true">
+            <div class="commands">
+                <button class="btn close"></button>
+                <button class="btn minimize"></button>
+                <button class="btn disabled"></button>
+            </div>
+            <input type="text" id="display" value="0" disabled>
+            <div class="keyboard">
+                
+                <button onClick="" class="btn command"><i class="bi bi-backspace"></i></button>
+                <button class="btn command"><i class="bi bi-plus-slash-minus"></i></button>
+                <button class="btn command">%</button>
+                <button class="btn operator">&divide;</button>
 
-                function moveAt(pageX, pageY) {
-                    textarea.style.left = pageX - shiftX + 'px';
-                    textarea.style.top = pageY - shiftY + 'px';
-                }
+                <button onClick="addDigit(event)" class="btn digit">7</button>
+                <button onClick="addDigit(event)" class="btn digit">8</i></button>
+                <button onClick="addDigit(event)" class="btn digit">9</button>
+                <button class="btn operator"><i class="bi bi-x-lg"></i></button>
 
-                function onMouseMove(e) {
-                    moveAt(e.pageX, e.pageY);
-                }
+                
+                <button onClick="addDigit(4)" class="btn digit">4</button>
+                <button onClick="addDigit(5)" class="btn digit">5</i></button>
+                <button onClick="addDigit(6)" class="btn digit">6</button>
+                <button class="btn operator"><i class="bi bi-dash-lg"></i></button>
 
-                document.addEventListener('mousemove', onMouseMove);
+                <button onClick="addDigit(1)" class="btn digit">1</button>
+                <button onClick="addDigit(2)" class="btn digit">2</i></button>
+                <button onClick="addDigit(3)" class="btn digit">3</button>
+                <button class="btn operator"><i class="bi bi-plus-lg"></i></button>
 
-                textarea.onmouseup = function () {
-                    document.removeEventListener('mousemove', onMouseMove);
-                    textarea.onmouseup = null;
-                };
-            });
-
-            textarea.ondragstart = function () {
-                return false;
-            };
-        });
-    </script>
-</head>
-<body>
-    <h1>Draggable Textarea Example</h1>
-    <p>Click and drag the textarea below:</p>
-    <div style="position: relative;">
-        <textarea class="draggable" style="position: absolute;">
-            I look like I'm draggable!
-        </textarea>
-    </div>
-    <p>Try resizing the textarea as well!</p>
-    <p>Note: This example uses JavaScript to make the textarea draggable.</p>
-    <p>Resize the textarea by dragging the bottom right corner.</p>
-    <p>Click and drag the textarea to move it around.</p>
-    <p>Make sure to test the functionality in a modern browser.</p>
-    <p>Enjoy!</p>
-    <p>Have a great day!</p>
-    <p>Remember to save your work!</p>
-    <p>Don't forget to check for updates!</p>
-    <p>Keep learning and improving!</p>
-    <p>Stay curious and keep exploring!</p>
-    <p>Thank you for using this example!</p>
-    <p>Good luck with your projects!</p>
-    <p>Feel free to modify the code as needed!</p>
-    <p>Happy coding!</p>
-    <p>Keep pushing your limits!</p>    
-
-
-
+                <button class="btn digit"><i class="bi bi-calculator-fill"></i></button>
+                <button onClick="addDigit(0)" class="btn digit">0</i></button>
+                <button class="btn digit">,</button>
+                <button class="btn operator">=</button>
+                
+            </div>
+        </div>
+    </body>
 </html>

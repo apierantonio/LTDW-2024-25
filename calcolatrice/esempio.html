@@ -1,0 +1,73 @@
+<html>
+
+
+<head>
+    <title>Draggable Textarea Example</title>
+    <style>
+        .draggable {
+            width: 300px;
+            height: 100px;
+            border: 1px solid #000;
+            padding: 10px;
+            resize: both;
+            overflow: auto;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const textarea = document.querySelector('.draggable');
+            textarea.addEventListener('mousedown', function (e) {
+                let shiftX = e.clientX - textarea.getBoundingClientRect().left;
+                let shiftY = e.clientY - textarea.getBoundingClientRect().top;
+
+                function moveAt(pageX, pageY) {
+                    textarea.style.left = pageX - shiftX + 'px';
+                    textarea.style.top = pageY - shiftY + 'px';
+                }
+
+                function onMouseMove(e) {
+                    moveAt(e.pageX, e.pageY);
+                }
+
+                document.addEventListener('mousemove', onMouseMove);
+
+                textarea.onmouseup = function () {
+                    document.removeEventListener('mousemove', onMouseMove);
+                    textarea.onmouseup = null;
+                };
+            });
+
+            textarea.ondragstart = function () {
+                return false;
+            };
+        });
+    </script>
+</head>
+<body>
+    <h1>Draggable Textarea Example</h1>
+    <p>Click and drag the textarea below:</p>
+    <div style="position: relative;">
+        <textarea class="draggable" style="position: absolute;">
+            I look like I'm draggable!
+        </textarea>
+    </div>
+    <p>Try resizing the textarea as well!</p>
+    <p>Note: This example uses JavaScript to make the textarea draggable.</p>
+    <p>Resize the textarea by dragging the bottom right corner.</p>
+    <p>Click and drag the textarea to move it around.</p>
+    <p>Make sure to test the functionality in a modern browser.</p>
+    <p>Enjoy!</p>
+    <p>Have a great day!</p>
+    <p>Remember to save your work!</p>
+    <p>Don't forget to check for updates!</p>
+    <p>Keep learning and improving!</p>
+    <p>Stay curious and keep exploring!</p>
+    <p>Thank you for using this example!</p>
+    <p>Good luck with your projects!</p>
+    <p>Feel free to modify the code as needed!</p>
+    <p>Happy coding!</p>
+    <p>Keep pushing your limits!</p>    
+
+
+
+</html>

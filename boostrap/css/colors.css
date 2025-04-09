@@ -1,0 +1,28 @@
+/* Define a color palette for the project */
+
+:root {
+    --primary-color: red; /* Bootstrap Blue */
+    --secondary-color: #6c757d; /* Gray */
+    --success-color: #28a745; /* Green */
+    --danger-color: #dc3545; /* Red */
+    --warning-color: #ffc107; /* Yellow */
+    --info-color: #17a2b8; /* Cyan */
+    --light-color: #f8f9fa; /* Light Gray */
+    --dark-color: #343a40; /* Dark Gray */
+    --white-color: #ffffff; /* White */
+    --black-color: #000000; /* Black */
+}
+
+/* Example usage */
+body {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}

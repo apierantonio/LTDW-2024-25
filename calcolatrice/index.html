@@ -3,15 +3,37 @@
         <link rel="stylesheet" href="calculator.css">
         <script>
             function addDigit(e) {
+                console.log('Ciao Claudio!');
 
-                alert(e.target.innerText);
+
+                if (document.getElementById('display').value == '0') {
+                    document.getElementById('display').value = e.target.innerText;
+                } else {
+                    /* concatenate the digit */
+                    /* to the display value */
+                    /* if the display value is not 0 */
+                    /* and the digit is not 0 */
+                    /* and the digit is not a comma */
+                    document.getElementById('display').value += e.target.innerText;
+                }
+                
             
             }
+
+            function dragEnd(e) {
+
+               // e.preventDefault();
+               // e.stopPropagation();
+
+               e.target.style.top = 300;
+               e.target.style.left = 500;
+            }
+
         </script>
     </head>
     <body>
 
-        <div class="calculator" draggable="true">
+        <div class="calculator" draggable="true" onDragEnd="dragEnd(event)">
             <div class="commands">
                 <button class="btn close"></button>
                 <button class="btn minimize"></button>

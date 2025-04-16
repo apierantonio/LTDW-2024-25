@@ -5,12 +5,10 @@
     <body>
         <script>
             var a;
-
-            if (a == undefined) {
-                alert('a is undefined');
-            } else {
-                alert('a is defined');
-            }
+            var b = a+2; // undefined + 2 => NaN
+            c = b+2; // NaN + 2 => NaN
+     
+            alert(a);    
 
         </script>
     </body>

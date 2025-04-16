@@ -4,11 +4,19 @@
     </head>
     <body>
         <script>
-            var a;
-            var b = a+2; // undefined + 2 => NaN
-            c = b+2; // NaN + 2 => NaN
-     
-            alert(a);    
+
+            alert(a); // a -> undefined
+            alert(b); // b -> b undefined
+            alert(c); // c -> ReferenceError: c is not defined
+            
+            var a; // a -> undefined
+            var b = 5; // b -> 5
+            c = 10; // c -> 10
+
+
+            
+            
+
 
         </script>
     </body>

@@ -2,15 +2,13 @@
     <head>
         <script>
 
-            const hello = () => {
-                return 'Hello World';
-            }
-
-            var person = {name: 'Luigi', surname: 'Mario'};
+         
+            
+            var person = ['Luigi', 'Mario', 'SuperMario', 'Peach', 'Toad', 'Yoshi', 'Wario', 'Waluigi'];
 
             function myfunction(obj) {
 
-                obj.map()
+                obj.map((element) => alert(element))
                 
             }
             
@@ -19,7 +17,7 @@
     <body>
 
         <form name="myform">
-            <input type="button" value="Exec function" onclick="alert(hello())">
+            <input type="button" value="Exec function" onclick="myfunction(person)">
 
 
         </form>

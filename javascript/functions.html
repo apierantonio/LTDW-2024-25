@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+
+            var person = {name: 'Luigi', surname: 'Mario'};
+
+            function myfunction(p) { 
+                
+                alert(p.name);
+
+                p.name = 'Mario'
+            }
+
+            var v = 10;
+            function myfunction2(v) { 
+                
+                alert(v);
+
+                v = 100;
+            }
+            
+        </script>
+    </head>
+    <body>
+
+        <form name="myform">
+            <input type="button" value="Exec function" onclick="myfunction2(v)">
+
+
+        </form>
+    </body>
+</html>

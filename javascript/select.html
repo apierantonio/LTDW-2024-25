@@ -1,7 +1,16 @@
 <html>
     <head>
         <script>
-            function getSelectedOptions() { alert()}
+            function getSelectedCount() { 
+                var count = 0;
+                for(var i = 0; i < document.myform.myselect.options.length; i++) {
+                    if (document.myform.myselect.options[i].selected) {
+                        count++;
+                    }
+                }
+                alert(count + " options selected");
+
+            }
             
         </script>
     </head>
@@ -20,7 +29,7 @@
                 <option value="9">Option I</option>
                 <option value="10">Option L</option>       
             </select>
-            <input type="button" value="Get Selected Options" onclick="getSelectedOptions()">
+            <input type="button" value="Get Selected Options" onclick="getSelectedCount()">
 
         </form>
     </body>

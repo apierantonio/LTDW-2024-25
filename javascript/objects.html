@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+            function Person(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            var person = [
+                new Person('Luigi', 30),
+                new Person('Mario', 35),
+                new Person('SuperMario', 40),
+                new Person('Peach', 28),
+                new Person('Toad', 25),
+                new Person('Yoshi', 32),
+                new Person('Wario', 38),
+                new Person('Waluigi', function() { return 33; } )
+            ];
+         
+            function myfunction() {
+                alert(person[0].age());
+            }
+            
+            
+        </script>
+    </head>
+    <body>
+
+        <form name="myform">
+            <input type="button" value="Exec function" onclick="myfunction()">
+
+
+        </form>
+    </body>
+</html>

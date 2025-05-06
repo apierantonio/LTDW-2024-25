@@ -41,6 +41,7 @@
                 }
 
                 add(el)   {
+                    this.elements.push(el);
                     this.form.appendChild(el.element);
 
                     return this;
@@ -68,17 +69,15 @@
             }
 
 
-            var f1 = new form('myform1'); 
+            
 
-            var element1 = new text('name', 'Name');
-            var element2 = new text('surname', 'Surname');
+            (new form('myform'))
+                .add(new text('name', 'Name'))
+                .add(new text('surname', 'Surname'))
+                .add(new text('age', 'Age'))
+                .emit();
 
-            /* this is not the right way to do it */
 
-            f1.add(element1);
-            f1.add(element2);
-
-            f1.emit();
 
         </script>
 

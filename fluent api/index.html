@@ -40,11 +40,10 @@
                     
                 }
 
-                add(element)   {
-                    var form = document.getElementsByName(this.name)[0];
-                    form.appendChild(element);
+                add(el)   {
+                    this.form.appendChild(el.element);
 
-                    return this
+                    return this;
                 }
             }
 
@@ -59,19 +58,28 @@
                 constructor(name, label) {
                     super(name,label);
 
-                    var element = document.createElement('input');
-                    element.type = 'text';
-                    element.name = this.name;
-                    element.id = this.name;
+                    this.element = document.createElement('input');
+
+                    this.element.type = 'text';
+                    this.element.name = this.name;
+                    this.element.id = this.name;
+                    this.element.placeholder = this.label;
                 }
             }
 
 
             var f1 = new form('myform1'); 
-            var f2 = new form('myform2', 'get'); 
+
+            var element1 = new text('name', 'Name');
+            var element2 = new text('surname', 'Surname');
+
+            /* this is not the right way to do it */
+
+            f1.add(element1);
+            f1.add(element2);
 
             f1.emit();
-            f2.emit();
+
         </script>
 
         

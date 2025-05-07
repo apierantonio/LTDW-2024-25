@@ -7,6 +7,10 @@
     <h1>PHP Test</h1>
     <p>This is a test page for PHP.</p>
     <?php
-        echo "<p>Hello, World!</p>";
+
+        $number = 100;
+
+
+        echo '<p>Hello, number: $number!</p>';
     ?>
 </html>

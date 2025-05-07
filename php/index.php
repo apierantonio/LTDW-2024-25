@@ -8,9 +8,12 @@
     <p>This is a test page for PHP.</p>
     <?php
 
-        $number = 100;
+        $anArray = array("first" => 1, "second" => 2, 3, "fourth" => 4, 5);
 
 
-        echo '<p>Hello, number: $number!</p>';
+        echo "{$anArray['first']}";
+
+        $anArray[] = "sei";
+        //echo "{$anArray[2]}";
     ?>
 </html>

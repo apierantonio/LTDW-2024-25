@@ -1,0 +1,81 @@
+<div class="page-content">
+    <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+    <div id="portlet-config" class="modal hide">
+      <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button"></button>
+        <h3>Widget Settings</h3>
+      </div>
+      <div class="modal-body"> Widget settings form goes here </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="content">
+      <ul class="breadcrumb">
+        <li>
+          <p>YOU ARE HERE</p>
+        </li>
+        <i class="icon-angle-right"></i>
+        <li><a href="#" class="active">Form Elements</a> </li>
+      </ul>
+      <div class="page-title"> <i class="icon-custom-left"></i>
+        <h3>report - <span class="semi-bold">User</span></h3>
+      </div>
+	  <!-- BEGIN BASIC FORM ELEMENTS-->
+        <div class="row">
+            <div class="col-md-12">
+              <div class="grid simple">
+                <div class="grid-title no-border">
+                </div>
+                <div class="grid-body no-border"> <br>
+                  <div class="row">
+                    <div class="col-md-8 col-sm-8 col-xs-8">
+                        
+                      <table class="table table-hover no-more-tables">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Username</th>
+                                                        <th>Name</th>
+                                                        <th>Surname</th>
+                                                        <th>Email</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <[foreach]>
+                                                    <tr>
+                                                        <td><a href="edit-user.php?username=<[username]>&step=1"><[username]></a></td>
+                                                        <td><[name]></td>
+                                                        <td><[surname]></td>
+                                                        <td><[email]></td>
+                                                    </tr></a>
+                                                    <[/foreach]>
+                                                </tbody>
+                                            </table>
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+	<!-- END BASIC FORM ELEMENTS-->	 
+	
+	
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+      <!-- END PAGE -->
+    </div>
+  </div>
+</div>

@@ -4,14 +4,22 @@
         public function dummy() {}
 
         public function text($name, $data, $pars){
+            
 
             return "<div class=\"form-group\">
     <label class=\"form-label\">{$pars['label']}</label>
     <span class=\"help\">{$pars['placeholder']}</span>
     <div class=\"controls\">
-        <input name=\"{$name}\"type=\"text\" class=\"form-control\">
+        <input name=\"{$name}\" type=\"text\" value=\"{$data}\" class=\"form-control\">
     </div>
 </div>";
+
+            
+        }
+
+        public function hidden($name, $data, $pars){
+
+            return "<input name=\"{$name}\" type=\"hidden\" value=\"{$pars['value']}\">";
 
             
         }
@@ -22,7 +30,7 @@
     <label class=\"form-label\">{$pars['label']}</label>
     <span class=\"help\">{$pars['placeholder']}</span>
     <div class=\"controls\">
-        <input name=\"{$name}\"type=\"password\" class=\"form-control\">
+        <input name=\"{$name}\" value=\"{$data}\" type=\"password\" class=\"form-control\">
     </div>
 </div>";
 
@@ -35,7 +43,7 @@
     <label class=\"form-label\">{$pars['label']}</label>
     <span class=\"help\">{$pars['placeholder']}</span>
     <div class=\"controls\">
-        <input name=\"{$name}\"type=\"email\" class=\"form-control\">
+        <input name=\"{$name}\" value=\"{$data}\" type=\"email\" class=\"form-control\">
     </div>
 </div>";
 
@@ -48,7 +56,7 @@
     <label class=\"form-label\">{$pars['label']}</label>
     <span class=\"help\">{$pars['placeholder']}</span>
     <div class=\"controls\">
-        <input name=\"{$name}\"type=\"date\" class=\"form-control\">
+        <input name=\"{$name}\" value=\"{$data}\" type=\"date\" class=\"form-control\">
     </div>
 </div>";
 

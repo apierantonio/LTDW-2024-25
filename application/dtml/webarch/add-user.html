@@ -17,7 +17,7 @@
         <li><a href="#" class="active">Form Elements</a> </li>
       </ul>
       <div class="page-title"> <i class="icon-custom-left"></i>
-        <h3>Add - <span class="semi-bold">User</span></h3>
+        <h3><[title::operation library="form"]> - <span class="semi-bold">User</span></h3>
       </div>
 	  <!-- BEGIN BASIC FORM ELEMENTS-->
         <div class="row">
@@ -30,7 +30,8 @@
                     <div class="col-md-8 col-sm-8 col-xs-8">
                         <form class="form-horizontal" role="form" method="post" style="width: 100%;">
                             <[step::hidden value="1" library="form"]>
-                            <[username::text label="Username" library="form"]>
+                            <[username::hidden library="form"]>
+                            <[username::text label="Username" disabled="edit" library="form"]>
                             <[password::password label="Password" library="form"]>
                             <[password2::password label="Confirm" library="form"]>
                             <[name::text label="Name" placeholder="e.g. Leonardo" library="form"]>

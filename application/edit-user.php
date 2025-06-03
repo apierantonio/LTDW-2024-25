@@ -41,32 +41,53 @@
             /* transazione + notifica */
             $body = new Template("dtml/webarch/add-user"); /* apre il body (sotto template) */
 
-            $query = "INSERT INTO user VALUES (
-                        '{$_POST['username']}',
-                        '".cifratura($_POST['password'],$_POST['username'])."',
-                        '{$_POST['name']}',
-                        '{$_POST['surname']}',
-                        '{$_POST['email']}')";
+            $query = "SELECT username, name, surname, email FROM user WHERE username = '" . $conn->real_escape_string($_GET['username']) . "'";
 
-            if ($conn->query($query)) {
-                echo "OK";
+            $result = $conn->query($query);
+
+
+            if (!$result) {
+                // Se la query fallisce, mostra un errore
+                die("Error: " . $conn->error . " ({$conn->errno}) ");
             } else {
-                if ($conn->errno == 1062) {
-                    echo "Error: username already exists.";
-
-                    foreach($_POST as $key => $value) {
-                        if ($key != "step") {
-                            $body->setContent($key, $value); /* setta i campi del form */
-                        }
-                    }
-
+                if ($result->num_rows == 0) {
+                    /* Se non ci sono risultati, l'utente non esiste */
+                    die("Error: User not found.");
                 } else {
-                    echo "Error: " . $conn->error . " ({$conn->errno}) ";
+                    $user = $result->fetch_assoc();
+
+                    foreach ($user as $key => $value) {                        
+                        $body->setContent($key, $value);
+                    }
+                    
                 }
-                echo "Error: " . $conn->error . " ({$conn->errno}) ";
+                
+                
             }
 
+            $body->setContent("step",2);
             break;
+
+            case 2: /* update */
+                $body = new Template("dtml/webarch/add-user");
+                $query = "UPDATE user SET
+                    name = '" . $conn->real_escape_string($_POST['name']) . "',
+                    surname = '" . $conn->real_escape_string($_POST['surname']) . "',
+                    email = '" . $conn->real_escape_string($_POST['email']) . "'
+                    WHERE username = '" . $conn->real_escape_string($_POST['username']) . "'";
+                $result = $conn->query($query);
+                if (!$result) {
+                    // Se la query fallisce, mostra un errore
+                    die("Error: " . $conn->error . " ({$conn->errno}) ");
+                } else {
+                    $main->setContent("message", "User updated successfully.");
+                }
+
+                foreach ($_POST as $key => $value) {
+                    $body->setContent($key, htmlspecialchars($value, ENT_QUOTES, 'UTF-8')); // Impedisce XSS
+                }
+                $body->setContent("step", 1); // Imposta lo step per tornare al form di modifica
+                break;
 
     }
 

@@ -3,7 +3,7 @@
     <div id="portlet-config" class="modal hide">
       <div class="modal-header">
         <button data-dismiss="modal" class="close" type="button"></button>
-        <h3>Widget Settings</h3>
+        <h3>Login</h3>
       </div>
       <div class="modal-body"> Widget settings form goes here </div>
     </div>
@@ -30,7 +30,7 @@
                     <div class="col-md-8 col-sm-8 col-xs-8">
                         <form class="form-horizontal" role="form" method="post" style="width: 100%;">
                             <[step::hidden value="1" library="form"]>
-                            <[key::hidden library="form"]>
+                            <[username::hidden library="form"]>
                             <[username::text label="Username" disabled="edit" library="form"]>
                             <[password::password label="Password" library="form"]>
                             <[password2::password label="Confirm" library="form"]>

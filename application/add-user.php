@@ -1,19 +1,16 @@
 <?php
 
+    session_start();
+
     require "include/template2.inc.php";
     require "include/dbms.inc.php"; /* include il database */
-
-    function cifratura($password, $username) {
-        /* cifratura goes here */
-
-        return md5($password.md5($username)); // esempio di cifratura semplice
-    }
+    require "include/auth.inc.php"; 
 
     $main = new Template("dtml/webarch/frame"); /* apre la template principale */
 
     /* controllo se il form è stato inviato */
 
-    if (!isset($_['step'])) {
+    if (!isset($_POST['step'])) {
         $_POST['step'] = 0; /* step iniziale */
     }
 
@@ -27,6 +24,8 @@
             
             break;
         case 1:
+
+
             /* transazione + notifica */
             $body = new Template("dtml/webarch/add-user"); /* apre il body (sotto template) */
 

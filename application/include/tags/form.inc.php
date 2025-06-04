@@ -41,10 +41,12 @@
         public function hidden($name, $data, $pars){
 
             if ($data != "") {
-                $pars['value'] = $data;
+                $value = $data;
+            } else {
+                $value = $pars['value'];
             } 
 
-            return "<input name=\"{$name}\" type=\"hidden\" value=\"{$pars['value']}\">";
+            return "<input name=\"{$name}\" type=\"hidden\" value=\"{$value}\">";
 
             
         }
